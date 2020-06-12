@@ -81,7 +81,11 @@ class FormEditar extends Component{
 	}
 
 	render() {
-    return html`<form onSubmit=${this.editTodo} action='javascript:'><input value=${localStorage.getItem(localStorage.key(this.keys))} onChange=${this.setText} /><button type='submit'>Save</button><button onclick=${this.deleteTodo}>Delete</button><button onclick=${this.hiddenform}>Cancel</button></form>  
+    return html`<form onSubmit=${this.editTodo} action='javascript:'>
+    <input value=${localStorage.getItem(localStorage.key(this.keys))} onChange=${this.setText} />
+    <button type='submit' class="save">Save</button>
+    <button onclick=${this.deleteTodo} class="delete">Delete</button>
+    <button onclick=${this.hiddenform} class="cancel">Cancel</button></form>  
     	`;
   }
 }
@@ -107,7 +111,7 @@ class Tarea extends Component{
 
 
 }
-function UserGreeting (props) {
+function Lista (props) {
 	const todos = localStorage;
 	const l = [];
 	for (var i = 0; i < todos.length; i++) {
@@ -130,7 +134,7 @@ function Vacio(props) {
 function ListaTareas(props){
 	const l = localStorage.length;
 	if(l !== 0){
-		return html`<${UserGreeting}/>`
+		return html`<${Lista}/>`
 	}else{
 		return html`<${Vacio}/>`
 	}

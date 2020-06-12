@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@font-face{
+	font-family: "VT323";
+	src: url('VT323.ttf');
+
+}
 #formadd{
 	display: none;
 }
@@ -6,6 +10,7 @@
 	background-color: black;
 	color: white;
 	font-family: "VT323";
+	padding: 3px;
 }
 h1, button{
 	
@@ -16,8 +21,23 @@ h1, button{
 	margin-top: 0px;
 	margin-bottom: 18px;
 }
+input{
+	width: 100%;
+	height: 30px;
+	font-size: 1.5em;
+}
+
+.save, .cancel, .delete{
+	width: 33%;
+}
+.tarea> button{
+	width:100%;
+}
+
+
 button{
 	width: 50%;
+	font-size: 2em;
 }
 #cabecera{
 	witdh: 100%;

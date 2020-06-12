@@ -7,15 +7,24 @@
     <link rel="manifest" href="./m.json">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>ToDo</title>
-    <style>
-   
-    </style>
+    <script>
+   // si nuestro navegador ejecuta service workers
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js').then(reg => {
+                console.log('Todo bien:', reg)
+            }, function (err) {
+                console.log('Fallo:', err)
+            })
+        })
+    }
+    </script>
 </head>
 
 <body>
 
 	<div id="cabecera">
-		<h1 id="titulo">ToDo</h1><p>Keep everything in order with this app</p><button onclick="showForm()">Create Tarea</button><button onclick="deleteall()">Delete All</button>
+		<h1 id="titulo">ToDo</h1><p>Keep everything in order with this app</p><button onclick="showForm()">Create Todo</button><button onclick="deleteall()">Delete All</button>
 	</div>
 	<div id="Opciones"></div>
 <script src="preact.js"type="module"></script>
