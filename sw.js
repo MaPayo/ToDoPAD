@@ -1,12 +1,2 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js')
-
-console.log(`Workbox ${workbox ? 'sí' : 'no'} está funcionando`)
-
-workbox.precaching.precacheAndRoute([
-  {url: '/ToDoPAD.github.io/index.html', revision: null },
-  {url: '/ToDoPAD.github.io/preact.js', revision: null},
-  {url: '/ToDoPAD.github.io/style.css', revision: null},
-  {url: '/ToDoPAD.github.io/functions.js', revision: null},
-  {url: '/ToDoPAD.github.io/VT323.ttf', revision: null},
-  {url: '/ToDoPAD.github.io/m.json', revision: null},
-])
+if(!self.define){const e=e=>{"require"!==e&&(e+=".js");let r=Promise.resolve();return s[e]||(r=new Promise(async r=>{if("document"in self){const s=document.createElement("script");s.src=e,document.head.appendChild(s),s.onload=r}else importScripts(e),r()})),r.then(()=>{if(!s[e])throw new Error(`Module ${e} didn’t register its module`);return s[e]})},r=(r,s)=>{Promise.all(r.map(e)).then(e=>s(1===e.length?e[0]:e))},s={require:Promise.resolve(r)};self.define=(r,i,t)=>{s[r]||(s[r]=Promise.resolve().then(()=>{let s={};const c={uri:location.origin+r.slice(1)};return Promise.all(i.map(r=>{switch(r){case"exports":return s;case"module":return c;default:return e(r)}})).then(e=>{const r=t(...e);return s.default||(s.default=r),s})}))}}define("./sw.js",["./workbox-1bbb3e0e"],(function(e){"use strict";self.addEventListener("message",e=>{e.data&&"SKIP_WAITING"===e.data.type&&self.skipWaiting()}),e.precacheAndRoute([{url:"functions.js",revision:"39b7c2749885c60b229ead75b173e434"},{url:"index.html",revision:"7e897625b85f8513590aa4089948b1ce"},{url:"package-lock.json",revision:"153c658056395cfa9b2cadc2df7bfd7f"},{url:"preact.js",revision:"7d0f1b3398ffd338350e5eb488db12d8"},{url:"style.css",revision:"d75299cab27ec5ff4034f3be99b574bb"},{url:"VT323.ttf",revision:"692c37377cd1e0f4850f47c7c0148426"}],{})}));
+//# sourceMappingURL=sw.js.map
