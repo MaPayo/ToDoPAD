@@ -2,7 +2,7 @@
 	"short_name": "ToDo",
 	"name": "ToDoApp",
 	"description": "App para gestionar tareas con una interfaz ochentera",
-	"start_url": "/ToDoPAD.github.io/",
+	"start_url": ".",
 	"display": "standalone",
 	"scope": "/"
 }
