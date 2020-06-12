@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.json">
     <title>ToDo</title>
     <style>
     	#formadd{
@@ -96,7 +97,7 @@ class FormEditar extends Component{
 		this.todos[p] = e.target.value;
 	}
 	render() {
-    return html`<form class="formeditar" style="display:none" onSubmit=${this.editTodo} action='javascript:'><input value=${this.elemento} onInput=${this.setText} /><button type='submit'>Save</button><button onclick=${this.hiddenform}>Cancel</button></form>  
+    return html`<form onSubmit=${this.editTodo} action='javascript:'><input value=${this.elemento} onInput=${this.setText} /><button type='submit'>Save</button><button onclick=${this.hiddenform}>Cancel</button></form>  
     	`
   }
 }

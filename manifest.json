@@ -1,0 +1,10 @@
+{
+  "short_name": "ToDo",
+  "name": "ToDo",
+  "description": "Esto sirve para hacer un gestor de tareas",
+  "icons": [ ],
+  "start_url": "/",
+  "background_color": "#26AF31",
+  "display": "standalone",
+  "scope": "/",
+}
