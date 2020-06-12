@@ -6,5 +6,5 @@
   "start_url": "/",
   "background_color": "#26AF31",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/"
 }
