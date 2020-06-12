@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+#formadd{
+	display: none;
+}
+*{
+	background-color: black;
+	color: white;
+	font-family: "VT323";
+}
+h1, button{
+	
+    color:#00FF41;
+}
+#titulo{
+	font-size: 4em;
+	margin-top: 0px;
+	margin-bottom: 18px;
+}
+button{
+	width: 50%;
+}
+#cabecera{
+	witdh: 100%;
+	border: solid 1px black;
+}

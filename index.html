@@ -5,150 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="./m.json">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>ToDo</title>
     <style>
-    	#formadd{
-    		display: none;
-    	}
-    	.formeditar{
-    		display:none;
-    	}
+   
     </style>
 </head>
 
 <body>
 
 	<div id="cabecera">
-		<button onclick="showForm()">Create Tarea</button>
+		<h1 id="titulo">ToDo</h1><p>Keep everything in order with this app</p><button onclick="showForm()">Create Tarea</button><button onclick="deleteall()">Delete All</button>
 	</div>
 	<div id="Opciones"></div>
-
-
-
-
-<script>
-	function showForm(){
-		document.getElementById("formadd").style.display = "block";
-	}
-</script>
-
-
-<script type="module">
-        import { html, render, Component } from 'https://unpkg.com/htm/preact/standalone.module.js' //Boton de añadir 
-//Clase que crea nuevas tareas
-class FormAdd extends Component {
-	constructor(props){
-		super(props);
-	}
-	state = {todos: [], text:''};
-	setText = e => {
-		e.stopPropagation()
-		this.setState({text: e.target.value})
-		e.preventDefault();
-	}
-
-	addTodo= (e) =>{
-		if(this.state.text!== ''){
-		e.preventDefault();
-		e.stopPropagation();
-		this.state.todos = this.state.todos.concat(this.state.text);
-		this.setState({text: ''});
-		document.getElementById("formadd").style.display = "none";
-		}
-	}
-
-
-	hiddenform = (e) =>{
-		e.preventDefault();
-		e.stopPropagation();
-		document.getElementById("formadd").style.display = "none";
-		this.setState({text: ''});
-	}
-
-  render() {
-  	const formulario =html`<form id="formadd" onSubmit=${this.addTodo.bind(this)} action='javascript:'>
-  	<input value=${this.state.text} onchange=${this.setText.bind(this)} />
-  	<button type='submit'>Add</button>
-  	<button onclick=${this.hiddenform.bind(this)}>Cancel</button></form>
-  	<${ListaTareas} todos=${this.state.todos}/>`;
-    return formulario;
-  }
-}
-
-class App extends Component{
-	constructor(props){
-		super(props);
-	} 
-	render(){ 
-		return html`<${FormAdd}/>`;}
-}
-
-
-
-class FormEditar extends Component{
-	constructor(props){
-		super(props);
-		this.elemento = props.elemento;
-		this.todos=props.todos;
-	}
-	editTodo=(e)=>{
-		let p = this.todos.indexOf(this.elemento);
-		console.log(this.todos[p]);
-		this.todos[p] = e.target.value;
-	}
-	render() {
-    return html`<form onSubmit=${this.editTodo} action='javascript:'><input value=${this.elemento} onInput=${this.setText} /><button type='submit'>Save</button><button onclick=${this.hiddenform}>Cancel</button></form>  
-    	`
-  }
-}
-
-class Tarea extends Component{
-	constructor(props){
-		super(props);
-		this.t = props.elemento;
-		this.todos = props.todos;
-	}
-	showform = (e)=>{
-		console.log("enseño el otro menu");
-		document.getElementsByClassName("formeditar").style.display = "block";
-	}
-	render(){
-	return html `<button onclick="${this.showform.bind(this)}">${this.t}</button><${FormEditar} todos=${this.todos} elemento=${this.t}/>`;
-}
-
-
-}
-function UserGreeting (props) {
-	const todos = props.todos;
-	const l = [];
-	todos.forEach(function(elemento, indice, array){
-	console.log("<button>"+elemento+"</button>", indice);
-	l.push(html`<${Tarea} elemento=${elemento} todos=${todos}/>`);
-	})		
-	console.log(l);
-	return l;
-}
-
-function Vacio(props) {
-  return html`<h1>No tienes tareas</h1>`;
-}
-
-
-function ListaTareas(props){
-	const l = props.todos.length;
-	if(l !== 0){
-		return html`<${UserGreeting} todos=${props.todos}/>`
-	}else{
-		return html`<${Vacio}/>`
-	}
-
-}
-
-
-
-render(html`<${App}/>` , document.getElementById("Opciones"));
-
-</script>
+<script src="preact.js"type="module"></script>
+<script src="functions.js"></script>
 </body>
 
 </html>
