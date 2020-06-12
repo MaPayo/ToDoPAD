@@ -1,0 +1,8 @@
+{
+	"short_name": "ToDo",
+	"name": "ToDoApp",
+	"description": "App para gestionar tareas",
+	"start_url": "/ToDoPAD.github.io/",
+	"display": "standalone",
+	"scope": "/"
+}
